@@ -504,7 +504,8 @@ void test_command(char *const *commandv, size_t bufsize, int commandc) {
         int min_cpu = benchmark->min_CPU_time;
         int randBurst;
         srand(time(NULL));
-        fprintf(fp, "Submitted Test Jobs:\n");
+        fprintf(fp, "Submitted Test Jobs: %s\n",benchmark->sType);
+        fprintf(fp, "Number of Jobs:%d,Priority Levels:%d,Min CPU:%d Max CPU:%d\n",benchmark->num_of_jobs,benchmark->priority_levels,benchmark->min_CPU_time,benchmark->max_CPU_time);
         fprintf(fp, "Name \t\tCPU_Time \tPri \tProgress\n");
         for (int i = 0; i < benchmark->num_of_jobs; i++) {
             if ((max_cpu - min_cpu) == 0) {
